@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Assustadora</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Impede barras de rolagem */
+        }
+
+        video {
+            width: 100vw; /* Ocupa a largura total da viewport */
+            height: 100vh; /* Ocupa a altura total da viewport */
+            object-fit: cover; /* Redimensiona o vídeo para cobrir o contêiner */
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="play-button" onclick="playVideo()">Play</button>
+
+    <video id="myVideo" loop controls style="display: none;">
+        <source src="https://xanonimoxx.github.io/99990/Video.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <script>
+        function playVideo() {
+            document.getElementById("myVideo").style.display = "block";
+            document.getElementById("myVideo").play();
+            document.querySelector('.play-button').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
